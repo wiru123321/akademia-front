@@ -1,5 +1,7 @@
 "use client";
 
+import { getStrapiMedia } from "./utils/api-helpers";
+
 export default function myImageLoader({
     src,
     width,
@@ -9,5 +11,6 @@ export default function myImageLoader({
     width?: number;
     quality?: number;
 }) {
-    return `http://localhost:1337${src}?w=${width}&q=${quality || 75}`;
+    const imgUrl = getStrapiMedia(src);
+    return `${imgUrl}?w=${width}&q=${quality || 75}`;
 }

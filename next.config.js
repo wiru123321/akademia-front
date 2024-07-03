@@ -6,8 +6,8 @@ const nextConfig = {
         loaderFile: "src/app/loader.ts",
         remotePatterns: [
             {
-                protocol: "http",
-                hostname: "localhost",
+                protocol: "https",
+                hostname: "akademiarozwoju.usermd.net",
                 port: "1337",
                 pathname: "/uploads/**",
             },
