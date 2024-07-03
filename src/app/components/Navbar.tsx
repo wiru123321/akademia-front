@@ -58,8 +58,8 @@ export default function Navbar({
         setMobileMenuOpen(false);
     };
     const scrollHeader = () => {
-        if (window.scrollY >= 40) {
-            // setHeader(true);
+        if (window.scrollY >= 120) {
+            setHeader(true);
         } else {
             setHeader(false);
         }
@@ -69,7 +69,7 @@ export default function Navbar({
     const [lastScrollY, setLastScrollY] = useState(0);
 
     const controlNavbar = () => {
-        if (window.scrollY > lastScrollY) {
+        if (window.scrollY > lastScrollY && header) {
             // if scroll down hide the navbar
             setShow(false);
             setHeader(true);
@@ -98,7 +98,6 @@ export default function Navbar({
         };
     }, []);
 
-    console.log(links);
     return (
         <div
             className={twMerge(
