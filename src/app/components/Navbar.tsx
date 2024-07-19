@@ -286,9 +286,9 @@ export default function Navbar({
                                                             <path
                                                                 d="M19.5 8.25L12 15.75L4.5 8.25"
                                                                 stroke="currentColor"
-                                                                stroke-linecap="round"
-                                                                stroke-linejoin="round"
-                                                                stroke-width="1.5"
+                                                                strokeLinecap="round"
+                                                                strokeLinejoin="round"
+                                                                strokeWidth="1.5"
                                                                 className={`transform origin-center transition duration-200 ease-out ${
                                                                     accordion &&
                                                                     "!rotate-180"

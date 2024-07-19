@@ -107,9 +107,9 @@ export default function Post({ data }: { data: Article }) {
                   <path
                     d="M15.4167 10H5M5 10L10 5M5 10L10 15"
                     stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   ></path>
                 </svg>
               </div>
