@@ -191,9 +191,9 @@ export default function Contact({
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap mb-6 sm:mb-12 lg:mb-18 items-center justify-center">
               <div className="w-full lg:w-1/2 mb-10 lg:mb-0">
-                <h1 className="mb-5 text-4xl text-center font-bold font-serif text-[#B8777D]">
+                <h2 className="mb-5 text-4xl text-center font-bold font-serif text-[#B8777D]">
                   {title && title}
-                </h1>
+                </h2>
                 <p className="text-lg md:text-xl text-black font-montserrat text-center font-medium">
                   {description && description}
                 </p>
@@ -247,9 +247,9 @@ export default function Contact({
                 </div>
               </div>
               <div className="w-full lg:w-1/2 px-4">
-                <h1 className="text-3xl text-center font-bold font-serif text-[#B8777D]">
+                <h3 className="text-3xl text-center font-bold font-serif text-[#B8777D]">
                   Formularz kontaktowy
-                </h1>
+                </h3>
                 <div className="px-4 py-8 md:p-10 bg-coolGray-50 rounded-md">
                   <form>
                     <div className="relative flex flex-wrap mb-6">

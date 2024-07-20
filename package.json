@@ -21,7 +21,7 @@
     "classnames": "^2.3.2",
     "moment": "^2.30.1",
     "negotiator": "^0.6.3",
-    "next": "^14.0.0",
+    "next": "^13.0.0",
     "postcss-multiple-tailwind": "^1.0.1",
     "qs": "^6.11.2",
     "react": "^18.2.0",

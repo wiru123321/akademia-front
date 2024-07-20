@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import dynamic from "next/dynamic";
-import { getStrapiURL } from "./utils/api-helpers";
+import { getStrapiMedia, getStrapiURL } from "./utils/api-helpers";
 import { fetchAPI } from "./utils/fetch-api";
 import Navbar from "./components/Navbar";
 import { FALLBACK_SEO } from "./utils/constants";
@@ -52,6 +52,15 @@ export async function getGlobal(): Promise<any> {
       "faq.trainingTitle",
       "faq.lessonTitle",
       "faq.lessonItems",
+      "opengraph.title",
+      "opengraph.url",
+      "opengraph.description",
+      "opengraph.image",
+      "opengraph.type",
+      "twitter.title",
+      "twitter.card",
+      "twitter.description",
+      "twitter.image",
     ],
   };
   return await fetchAPI(path, urlParamsObject, options);
@@ -83,14 +92,31 @@ export default async function RootLayout({
   // TODO: CREATE A CUSTOM ERROR PAGE
   if (!global.data) return null;
 
-  const { contact, navbar, footer, faq } = global.data.attributes;
+  const { contact, navbar, footer, faq, opengraph, twitter } =
+    global.data.attributes;
 
   const navbarLogoUrl = navbar.navbarLogo.logoImg.data.attributes.url;
+
+  const ogUrl = opengraph.image.data.attributes.url;
+
+  const twitterUrl = twitter.image.data.attributes.url;
 
   return (
     <html lang="pl">
       <head>
         <CanonicalURL />
+        <meta name="twitter:card" content={twitter.card} />
+        <meta name="twitter:title" content={twitter.title} />
+        <meta name="twitter:description" content={twitter.description} />
+        <meta
+          name="twitter:image"
+          content={getStrapiMedia(twitterUrl) || twitterUrl}
+        />
+        <meta property="og:url" content={opengraph.url} />
+        <meta property="og:type" content={opengraph.type} />
+        <meta property="og:title" content={opengraph.title} />
+        <meta property="og:description" content={opengraph.description} />
+        <meta property="og:image" content={getStrapiMedia(ogUrl) || ogUrl} />
       </head>
       <body>
         <Navbar

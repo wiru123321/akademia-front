@@ -52,9 +52,9 @@ export default function CardFeatures({ data }: CardFeaturesProps) {
     <section className="relative py-10 overflow-hidden">
       <div className="container px-4 mx-auto">
         <div className="max-w-3xl mx-auto mb-8 text-center">
-          <h1 className="font-serif text-4xl mb-4 font-bold text-[#B8777D]">
+          <h2 className="font-serif text-4xl mb-4 font-bold text-[#B8777D]">
             <span>{data.title}</span>
-          </h1>
+          </h2>
           {data.description && (
             <p className="text-lg text-black text-center font-medium font-montserrat leading-normal md:max-w-lg mx-auto">
               {data.description}

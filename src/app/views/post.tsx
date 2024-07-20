@@ -118,9 +118,9 @@ export default function Post({ data }: { data: Article }) {
               </span>
             </Link>
           </div>
-          <h1 className="text-center text-black text-3xl lg:text-5xl font-bold mb-12 max-w-xl lg:max-w-3xl mx-auto">
+          <h2 className="text-center text-black text-3xl lg:text-5xl font-bold mb-12 max-w-xl lg:max-w-3xl mx-auto">
             {title}
-          </h1>
+          </h2>
           <div className="w-full flex justify-center">
             <Image
               loader={myImageLoader}

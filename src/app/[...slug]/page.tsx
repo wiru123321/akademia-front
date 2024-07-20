@@ -36,3 +36,7 @@ export default async function PageRoute({ params }: Props) {
     sectionRenderer(section, index)
   );
 }
+
+export async function generateStaticParams() {
+  return [];
+}

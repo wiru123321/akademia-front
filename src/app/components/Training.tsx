@@ -46,9 +46,9 @@ export default function Training({ data }: TrainingProps) {
     <section className="py-2 -mt-16 pt-28" id={data.section}>
       <div className="container py-10 mx-auto">
         <div className="max-w-3xl mx-auto mb-8 text-center px-4">
-          <h1 className="text-4xl font-serif font-bold mb-6 text-[#B8777D]">
+          <h2 className="text-4xl font-serif font-bold mb-6 text-[#B8777D]">
             {data.title && data.title}
-          </h1>
+          </h2>
           <p className="mb-5 font-montserrat text-base text-black">
             {data.description && data.description}
           </p>

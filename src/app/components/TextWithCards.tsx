@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaRegClock } from "react-icons/fa";
+import { Swiper as SwiperType } from "swiper";
 import { BsPeople } from "react-icons/bs";
 import { TbWorld } from "react-icons/tb";
 import "swiper/css";
@@ -44,6 +45,7 @@ function RenderIcon({ icon }: { icon: string | undefined }) {
 }
 
 export default function TextWithCards({ data }: TextWithCardsProps) {
+  const swiperRef = useRef<SwiperType>();
   return (
     <>
       <section className="py-8 bg-[#CFB0AE]">
@@ -52,7 +54,9 @@ export default function TextWithCards({ data }: TextWithCardsProps) {
             slidesPerView={1}
             spaceBetween={30}
             loop={true}
-            navigation={true}
+            onBeforeInit={(swiper) => {
+              swiperRef.current = swiper;
+            }}
             modules={[Navigation, Autoplay]}
             autoplay={{
               delay: 8000,
@@ -126,6 +130,48 @@ export default function TextWithCards({ data }: TextWithCardsProps) {
                   </div>
                 </SwiperSlide>
               ))}
+            <div className="flex flex-wrap gap-2 justify-start p-4">
+              <button
+                className="p-2 rounded-full border border-gray-200 shadow hover:bg-gray-50 transition duration-200"
+                onClick={() => swiperRef.current?.slidePrev()}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    d="M13.125 16.25L6.875 10L13.125 3.75"
+                    stroke="#282828"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </button>
+              <button
+                className="p-2 rounded-full border border-gray-200 shadow hover:bg-gray-50 transition duration-200"
+                onClick={() => swiperRef.current?.slideNext()}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    d="M6.875 3.75L13.125 10L6.875 16.25"
+                    stroke="#282828"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </button>
+            </div>
           </Swiper>
         </div>
       </section>
