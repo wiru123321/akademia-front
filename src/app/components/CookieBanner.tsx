@@ -6,7 +6,7 @@ export default function CookieBanner() {
   const [open, setOpen] = useState(true);
   return (
     open && (
-      <div className="fixed z-40 bottom-0 w-full p-6">
+      <div className="fixed z-40 bottom-0 w-full p-6 intersect:animate-fade animate-once animate-duration-[1500ms] intersect-once">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto px-8 py-6 w-full bg-[#000000dc] rounded-md">
             <div className="flex flex-wrap items-center -mx-4">

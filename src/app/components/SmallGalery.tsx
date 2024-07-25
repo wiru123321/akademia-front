@@ -22,7 +22,7 @@ interface SmallGaleryProps {
 
 export default function SmallGalery({ data }: SmallGaleryProps) {
   return (
-    <section className="py-12 md:py-20">
+    <section className="py-12 md:py-20 intersect:animate-fade animate-once animate-duration-[1500ms] intersect-once">
       <div className="container px-4 mx-auto">
         <div className="max-w-lg mx-auto mb-12 text-center">
           <h2 className="text-4xl mb-4 font-bold font-serif text-[#B8777D]">

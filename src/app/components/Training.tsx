@@ -43,7 +43,10 @@ function RenderIcon({ icon }: { icon: number }) {
 
 export default function Training({ data }: TrainingProps) {
   return (
-    <section className="py-2 -mt-16 pt-28" id={data.section}>
+    <section
+      className="py-2 -mt-16 pt-28 intersect:animate-fade animate-once animate-duration-[1500ms] intersect-once"
+      id={data.section}
+    >
       <div className="container py-10 mx-auto">
         <div className="max-w-3xl mx-auto mb-8 text-center px-4">
           <h2 className="text-4xl font-serif font-bold mb-6 text-[#B8777D]">

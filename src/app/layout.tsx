@@ -161,6 +161,10 @@ export default async function RootLayout({
           copyrights={footer.copyrights}
           pageList={footer.pageList}
         />
+        <script
+          defer
+          src="https://unpkg.com/tailwindcss-intersect@2.x.x/dist/observer.min.js"
+        ></script>
       </body>
     </html>
   );
