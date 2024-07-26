@@ -32,26 +32,72 @@ export async function getGlobal(): Promise<any> {
     throw new Error("The Strapi API Token environment variable is not set.");
 
   const path = `/global`;
-  const options = { headers: { Authorization: `Bearer ${token}` } };
+  const options = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
 
   const urlParamsObject = {
     populate: [
       "metadata.shareImage",
+      "metadata.metaTitle",
+      "metadata.metaDescription",
       "favicon",
-      "notificationBanner.link",
       "contact.contactCard",
-      "navbar.navbarLink",
-      "navbar.button",
-      "navbar.navbarLink.megaSection",
-      "navbar.navbarLogo.logoImg",
       "footer.lessonSection",
       "footer.trainingSection",
       "footer.contactSection",
       "footer.pageList",
+    ],
+  };
+
+  return await fetchAPI(path, urlParamsObject, options);
+}
+
+export async function getGlobalAnother(): Promise<any> {
+  const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
+
+  if (!token)
+    throw new Error("The Strapi API Token environment variable is not set.");
+
+  const path = `/global`;
+  const options = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const urlParamsObject = {
+    populate: [
+      "navbar.navbarLink",
+      "navbar.button",
+      "navbar.navbarLink.megaSection",
+      "navbar.navbarLogo.logoImg",
       "faq.trainingItems",
       "faq.trainingTitle",
       "faq.lessonTitle",
       "faq.lessonItems",
+    ],
+  };
+  return await fetchAPI(path, urlParamsObject, options);
+}
+
+export async function getGlobalMeta(): Promise<any> {
+  const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
+
+  if (!token)
+    throw new Error("The Strapi API Token environment variable is not set.");
+
+  const path = `/global`;
+  const options = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const urlParamsObject = {
+    populate: [
       "opengraph.title",
       "opengraph.url",
       "opengraph.description",
@@ -88,12 +134,18 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const globalComponents = await getGlobalAnother();
   const global = await getGlobal();
-  // TODO: CREATE A CUSTOM ERROR PAGE
-  if (!global.data) return null;
+  const globalMeta = await getGlobalMeta();
 
-  const { contact, navbar, footer, faq, opengraph, twitter } =
-    global.data.attributes;
+  // TODO: CREATE A CUSTOM ERROR PAGE
+  if (!global.data || !globalComponents.data || !globalMeta.data) return null;
+
+  const { contact, footer } = global.data.attributes;
+
+  const { navbar, faq } = globalComponents.data.attributes;
+
+  const { opengraph, twitter } = globalMeta.data.attributes;
 
   const navbarLogoUrl = navbar.navbarLogo.logoImg.data.attributes.url;
 

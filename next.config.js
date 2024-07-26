@@ -13,11 +13,11 @@ const nextConfig = {
       },
     ],
   },
-  compiler: {
-    styledComponents: {
-      minify: false,
-    },
-  },
+  // compiler: {
+  //   styledComponents: {
+  //     minify: false,
+  //   },
+  // },
 };
 
 module.exports = nextConfig;

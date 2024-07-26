@@ -23,7 +23,7 @@
     "negotiator": "^0.6.3",
     "next": "^13.0.0",
     "postcss-multiple-tailwind": "^1.0.1",
-    "qs": "^6.11.2",
+    "qs": "^6.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
