@@ -1,8 +1,20 @@
-import RichText from "../components/RichText";
-import ImageSlider from "../components/ImageSlider";
-import Quote from "../components/Quote";
-import Media from "../components/Media";
-import VideoEmbed from "../components/VideoEmbed";
+import dynamic from "next/dynamic";
+
+const RichText = dynamic(() => import("app/components/RichText"), {
+  loading: () => <p>Loading...</p>,
+});
+const ImageSlider = dynamic(() => import("app/components/ImageSlider"), {
+  loading: () => <p>Loading...</p>,
+});
+const Quote = dynamic(() => import("app/components/Quote"), {
+  loading: () => <p>Loading...</p>,
+});
+const Media = dynamic(() => import("app/components/Media"), {
+  loading: () => <p>Loading...</p>,
+});
+const VideoEmbed = dynamic(() => import("app/components/VideoEmbed"), {
+  loading: () => <p>Loading...</p>,
+});
 
 export function postRenderer(section: any, index: number) {
   switch (section.__component) {
@@ -10,7 +22,7 @@ export function postRenderer(section: any, index: number) {
       return <RichText key={index} data={section} />;
     case "shared.slider":
       return <ImageSlider key={index} data={section} />;
-    case "shared.quote": 
+    case "shared.quote":
       return <Quote key={index} data={section} />;
     case "shared.media":
       return <Media key={index} data={section} />;

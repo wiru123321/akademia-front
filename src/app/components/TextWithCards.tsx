@@ -145,9 +145,9 @@ export default function TextWithCards({ data }: TextWithCardsProps) {
                   <path
                     d="M13.125 16.25L6.875 10L13.125 3.75"
                     stroke="#282828"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   ></path>
                 </svg>
               </button>
@@ -165,9 +165,9 @@ export default function TextWithCards({ data }: TextWithCardsProps) {
                   <path
                     d="M6.875 3.75L13.125 10L6.875 16.25"
                     stroke="#282828"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   ></path>
                 </svg>
               </button>

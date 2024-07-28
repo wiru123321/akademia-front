@@ -56,10 +56,10 @@ export default function BlogSection({ data }: BlogSectionProps) {
       <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-8 gap-12 items-center md:max-w-7xl max-w-lg mx-auto">
         <div>
           <h2 className="text-4xl font-serif font-semibold text-[#B97B80] mb-6">
-            {data.title}
+            {data.title && data.title}
           </h2>
           <h2 className="text-3xl font-montserrat font-bold text-black uppercase leading-10 mb-6">
-            {data.description}
+            {data.description && data.description}
           </h2>
           {data.button && (
             <Link
@@ -77,39 +77,40 @@ export default function BlogSection({ data }: BlogSectionProps) {
           )}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:col-span-2">
-          {data.articles.data.map((article: Article, index: number) => (
-            <Link
-              key={index}
-              href={`/blog/${article.attributes.category.data.attributes.slug}/${article.attributes.slug}`}
-              target={"_blank"}
-              className="cursor-pointer rounded-3xl overflow-hidden group"
-            >
-              <div className="rounded-3xl overflow-hidden">
-                <Image
-                  loader={myImageLoader}
-                  src={article.attributes.cover.data.attributes.url}
-                  alt={
-                    article.attributes.cover.data.attributes.alternativeText ||
-                    ""
-                  }
-                  width={400}
-                  height={400}
-                  className="w-full h-52 rounded-3xl animate-fade-in scale-100 transform object-cover opacity-100 transition duration-300 group-hover:rounded-3xl group-hover:scale-110"
-                />
-              </div>
-              <div className="py-6">
-                <span className="text-sm font-montserrat block text-gray-400 mb-2">
-                  {moment(article.attributes.publishedAt)
-                    .utc()
-                    .format("DD/MM/YYYY")}{" "}
-                  | {article.attributes.authorsBio.data.attributes.name}
-                </span>
-                <h3 className="text-xl font-bold font-serif text-black group-hover:text-[#B97B80] duration-300 transition-all">
-                  {article.attributes.title}
-                </h3>
-              </div>
-            </Link>
-          ))}
+          {data.articles &&
+            data.articles.data.map((article: Article, index: number) => (
+              <Link
+                key={index}
+                href={`/blog/${article.attributes.category.data.attributes.slug}/${article.attributes.slug}`}
+                target={"_blank"}
+                className="cursor-pointer rounded-3xl overflow-hidden group"
+              >
+                <div className="rounded-3xl overflow-hidden">
+                  <Image
+                    loader={myImageLoader}
+                    src={article.attributes.cover.data.attributes.url}
+                    alt={
+                      article.attributes.cover.data.attributes
+                        .alternativeText || ""
+                    }
+                    width={400}
+                    height={400}
+                    className="w-full h-52 rounded-3xl animate-fade-in scale-100 transform object-cover opacity-100 transition duration-300 group-hover:rounded-3xl group-hover:scale-110"
+                  />
+                </div>
+                <div className="py-6">
+                  <span className="text-sm font-montserrat block text-gray-400 mb-2">
+                    {moment(article.attributes.publishedAt)
+                      .utc()
+                      .format("DD/MM/YYYY")}{" "}
+                    | {article.attributes.authorsBio.data.attributes.name}
+                  </span>
+                  <h3 className="text-xl font-bold font-serif text-black group-hover:text-[#B97B80] duration-300 transition-all">
+                    {article.attributes.title}
+                  </h3>
+                </div>
+              </Link>
+            ))}
         </div>
       </div>
     </div>

@@ -44,21 +44,22 @@ export default function ArticleSelect({
 
       <div>
         <div className="flex flex-wrap py-6 space-x-2 dark:border-gray-400">
-          {categories.map((category: Category, index: number) => {
-            if (category.attributes.articles.data.length === 0) return null;
-            return (
-              <Link
-                key={index}
-                href={`/blog/${category.attributes.slug}`}
-                className={selectedFilter(
-                  category.attributes.slug,
-                  params.category
-                )}
-              >
-                #{category.attributes.name}
-              </Link>
-            );
-          })}
+          {categories &&
+            categories.map((category: Category, index: number) => {
+              if (category.attributes.articles.data.length === 0) return null;
+              return (
+                <Link
+                  key={index}
+                  href={`/blog/${category.attributes.slug}`}
+                  className={selectedFilter(
+                    category.attributes.slug,
+                    params.category
+                  )}
+                >
+                  #{category.attributes.name}
+                </Link>
+              );
+            })}
           <Link href={"/blog"} className={selectedFilter("", "filter")}>
             #all
           </Link>
@@ -67,22 +68,23 @@ export default function ArticleSelect({
         <div className="space-y-2">
           <h4 className="text-lg font-semibold">Other Posts You May Like</h4>
           <ul className="ml-4 space-y-1 list-disc">
-            {articles.map((article: Article, index: number) => {
-              return (
-                <li key={index}>
-                  <Link
-                    rel="noopener noreferrer"
-                    href={`/blog/${params.category}/${article.attributes.slug}`}
-                    className={`${
-                      params.slug === article.attributes.slug &&
-                      "text-violet-400"
-                    }  hover:underline hover:text-violet-400 transition-colors duration-200`}
-                  >
-                    {article.attributes.title}
-                  </Link>
-                </li>
-              );
-            })}
+            {articles &&
+              articles.map((article: Article, index: number) => {
+                return (
+                  <li key={index}>
+                    <Link
+                      rel="noopener noreferrer"
+                      href={`/blog/${params.category}/${article.attributes.slug}`}
+                      className={`${
+                        params.slug === article.attributes.slug &&
+                        "text-violet-400"
+                      }  hover:underline hover:text-violet-400 transition-colors duration-200`}
+                    >
+                      {article.attributes.title}
+                    </Link>
+                  </li>
+                );
+              })}
           </ul>
         </div>
       </div>

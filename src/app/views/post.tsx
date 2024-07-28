@@ -124,7 +124,7 @@ export default function Post({ data }: { data: Article }) {
           <div className="w-full flex justify-center">
             <Image
               loader={myImageLoader}
-              className="w-[60%] rounded-2xl mb-12"
+              className="w-[40%] rounded-2xl mb-12"
               src={imageUrl}
               width={200}
               height={200}
@@ -146,7 +146,7 @@ export default function Post({ data }: { data: Article }) {
                   />
                 )}
                 <div>
-                  <p className="text-lg font-semibold">
+                  <p className="text-lg font-semibold text-black">
                     {author && author.name}
                   </p>
                 </div>
