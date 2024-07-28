@@ -44,7 +44,7 @@ interface Feature {
 export default function Features({ data }: FeaturesProps) {
   const swiperRef = useRef<SwiperType>();
   return (
-    <section className="relative py-10 overflow-hidden intersect:animate-fade animate-once animate-duration-[1500ms] intersect-once">
+    <section className="relative py-10 overflow-hidden intersect:animate-fade animate-once animate-duration-[1500ms] intersect-half">
       <div className="container px-4 mx-auto">
         <div className="max-w-3xl mx-auto mb-16 text-center">
           <h2 className="font-serif text-4xl font-bold text-[#B8777D]">

@@ -187,7 +187,7 @@ export default function Contact({
   return (
     <section id="contact">
       <>
-        <section className="py-20 bg-white intersect:animate-fade animate-once animate-duration-[1500ms] intersect-once">
+        <section className="py-20 bg-white intersect:animate-fade animate-once animate-duration-[1500ms] intersect-half">
           <div className="container px-4 mx-auto animate-fade-up animate-once">
             <div className="flex flex-wrap mb-6 sm:mb-12 lg:mb-18 items-center justify-center">
               <div className="w-full lg:w-1/2 mb-10 lg:mb-0">

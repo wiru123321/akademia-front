@@ -30,7 +30,7 @@ function RenderIcon({ icon }: { icon: string | undefined }) {
 
 export default function LessonDivider({ data }: LessonDividerProps) {
   return (
-    <section className="pt-8 pb-2 bg-[#CFB0AE] intersect:animate-fade animate-once animate-duration-[1500ms] intersect-once">
+    <section className="pt-8 pb-2 bg-[#CFB0AE] intersect:animate-fade animate-once animate-duration-[1500ms] intersect-half">
       <div className="container px-4 mx-auto">
         <div className="flex flex-wrap -mx-3 justify-center">
           {data.items &&

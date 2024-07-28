@@ -52,7 +52,7 @@ interface BlogSectionProps {
 
 export default function BlogSection({ data }: BlogSectionProps) {
   return (
-    <div className="p-6 my-6 intersect:animate-fade animate-once animate-duration-[1500ms] intersect-once">
+    <div className="p-6 my-6 intersect:animate-fade animate-once animate-duration-[1500ms] intersect-half">
       <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-8 gap-12 items-center md:max-w-7xl max-w-lg mx-auto">
         <div>
           <h2 className="text-4xl font-serif font-semibold text-[#B97B80] mb-6">

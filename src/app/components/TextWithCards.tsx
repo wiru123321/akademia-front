@@ -48,7 +48,7 @@ export default function TextWithCards({ data }: TextWithCardsProps) {
   const swiperRef = useRef<SwiperType>();
   return (
     <>
-      <section className="py-8 bg-[#CFB0AE] intersect:animate-fade animate-once animate-duration-[1500ms] intersect-once">
+      <section className="py-8 bg-[#CFB0AE] intersect:animate-fade animate-once animate-duration-[1500ms] intersect-half">
         <div className="container px-4 mx-auto">
           <Swiper
             slidesPerView={1}
