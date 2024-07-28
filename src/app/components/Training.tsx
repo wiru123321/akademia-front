@@ -44,7 +44,7 @@ function RenderIcon({ icon }: { icon: number }) {
 export default function Training({ data }: TrainingProps) {
   return (
     <section
-      className="py-2 -mt-16 pt-28 intersect:animate-fade animate-once animate-duration-[1500ms] intersect-half"
+      className="py-2 -mt-16 pt-28 opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once intersect-half"
       id={data.section}
     >
       <div className="container py-10 mx-auto">

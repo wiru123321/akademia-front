@@ -27,13 +27,13 @@ export default function FAQ({
   trainingTitle,
 }: FAQProps) {
   const [swiper, setSwiper] = useState<any>();
-  const [activeTab, setActiveTab] = useState("faqsl-0");
+  const [activeTab, setActiveTab] = useState("0");
   const [activeElement, setActiveElement] = useState<string | undefined>(
     undefined
   );
 
   return (
-    <section className="mx-auto pb-8 bg-[#CFB0AE] overflow-hidden intersect:animate-fade animate-once animate-duration-[1500ms] intersect-half">
+    <section className="mx-auto pb-8 bg-[#CFB0AE] overflow-hidden opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once intersect-half">
       <div className="container mx-auto py-16 space-y-2 text-center">
         <h2 className="text-4xl font-serif font-bold text-white leading-none text-center">
           {title}

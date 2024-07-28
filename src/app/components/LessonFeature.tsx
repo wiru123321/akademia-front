@@ -54,7 +54,7 @@ function RenderIcon({ icon }: { icon: number }) {
 
 export default function LessonFeature({ data }: LessonFeatureProps) {
   return (
-    <section className="py-8 overflow-hidden intersect:animate-fade animate-once animate-duration-[1500ms] intersect-half">
+    <section className="py-8 overflow-hidden opacity-0 opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once intersect-half">
       <div className="container px-4 mx-auto">
         <div className="mb-14 max-w-xl">
           {data.title && (

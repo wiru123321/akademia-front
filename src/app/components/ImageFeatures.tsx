@@ -41,7 +41,7 @@ interface ImageFeature {
 
 export default function ImageFeatures({ data }: ImageFeaturesProps) {
   return (
-    <section className="relative py-10 overflow-hidden bg-[#CFB0AE] intersect:animate-fade animate-once animate-duration-[1500ms] intersect-half">
+    <section className="relative py-10 overflow-hidden bg-[#CFB0AE] opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once intersect-half">
       <div className="container px-4 mx-auto">
         <div className="max-w-3xl mx-auto mb-8 text-center">
           <h2 className="font-serif text-4xl mb-4 font-bold text-black">

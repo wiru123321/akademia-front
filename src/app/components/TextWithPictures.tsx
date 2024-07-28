@@ -28,7 +28,7 @@ interface TextWithPictureProps {
 export default function TextWithPictures({ data }: TextWithPictureProps) {
   return (
     <>
-      <section className="container py-10 px-4 md:px-10 mx-auto m:py-12 lg:py-24 intersect:animate-fade animate-once animate-duration-[1500ms] intersect-half">
+      <section className="container py-10 px-4 md:px-10 mx-auto m:py-12 lg:py-24 opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once intersect-half">
         <div className="flex flex-wrap items-center justify-between -mx-4">
           <div className="w-full px-4 lg:w-1/2 xl:w-7/12">
             <div className="mt-10 lg:mt-0">
