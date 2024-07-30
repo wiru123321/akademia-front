@@ -36,7 +36,7 @@ interface JumbotronProps {
 export default function Jumbotron({ data }: JumbotronProps) {
   const imgUrl = getStrapiMedia(data.picture.data.attributes.url);
   return (
-    <div className="mx-auto my-16 md:my-28 flex items-center opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once intersect-half">
+    <div className="mx-auto my-16 md:my-28 flex items-center opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once">
       <section
         className="w-full bg-cover bg-center py-32"
         style={{

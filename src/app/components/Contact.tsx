@@ -187,7 +187,7 @@ export default function Contact({
   return (
     <section id="contact">
       <>
-        <section className="py-20 bg-white opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once intersect-half">
+        <section className="py-20 bg-white">
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap mb-6 sm:mb-12 lg:mb-18 items-center justify-center">
               <div className="w-full lg:w-1/2 mb-10 lg:mb-0">
@@ -236,7 +236,7 @@ export default function Contact({
                             </h3>
                           )}
                           {card.description && (
-                            <p className="text-md md:text-lg font-medium break-words">
+                            <p className="text-sm md:text-lg font-medium break-words">
                               {card.description}
                             </p>
                           )}

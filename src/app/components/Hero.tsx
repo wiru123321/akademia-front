@@ -36,7 +36,7 @@ export default function Hero({ data }: HeroProps) {
   const imgUrl = getStrapiMedia(data.picture.data.attributes.url);
 
   return (
-    <section className="mb-10 overflow-hidden mx-auto opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once intersect-half">
+    <section className="mb-10 overflow-hidden mx-auto opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once">
       <div
         style={{
           backgroundImage: `url(${imgUrl || ""})`,

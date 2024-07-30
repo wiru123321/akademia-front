@@ -37,7 +37,7 @@ interface TextWithImageProps {
 
 export default function TextWithImage({ data }: TextWithImageProps) {
   return (
-    <section className="container px-4 mx-auto opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once intersect-half">
+    <section className="container px-4 mx-auto opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once">
       <div
         className={`flex items-center flex-wrap mb-10 mt-14 ${
           data.isInverted ? "flex-row-reverse" : "flex-row"

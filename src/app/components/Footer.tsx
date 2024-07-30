@@ -58,7 +58,7 @@ export default function Footer({
   pageList,
 }: TrainingProps) {
   return (
-    <div className="bg-[#1E1E1E] opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once intersect-half">
+    <div className="bg-[#1E1E1E] opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once">
       <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="grid gap-10 row-gap-6 mb-12 sm:grid-cols-2 lg:grid-cols-4">
           <div className="text-center w-full md:text-left md:w-auto">

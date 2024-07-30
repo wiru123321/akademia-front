@@ -15,7 +15,7 @@ interface LessonContentProps {
 export default function LessonContent({ data }: LessonContentProps) {
   return (
     <section
-      className="relative py-12 -mt-16 pt-28 opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once intersect-half"
+      className="relative py-12 -mt-16 pt-28 opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once"
       id={data.section}
     >
       <div className="relative container px-4 mx-auto">

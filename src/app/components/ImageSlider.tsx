@@ -20,7 +20,7 @@ interface SlidShowProps {
 
 export default function Slideshow({ data }: { data: SlidShowProps }) {
   return (
-    <div className="slide-container opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once intersect-half">
+    <div className="slide-container opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once">
       <Fade>
         {data.files.data.map((fadeImage: Image, index) => {
           const imageUrl = fadeImage.attributes.url;
