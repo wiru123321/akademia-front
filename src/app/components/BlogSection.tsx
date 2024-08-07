@@ -82,7 +82,7 @@ export default function BlogSection({ data }: BlogSectionProps) {
               <Link
                 key={index}
                 href={`/blog/${article.attributes.category.data.attributes.slug}/${article.attributes.slug}`}
-                target={"_blank"}
+                target="_self"
                 className="cursor-pointer rounded-3xl overflow-hidden group"
               >
                 <div className="rounded-3xl overflow-hidden">

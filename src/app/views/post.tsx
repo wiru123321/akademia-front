@@ -124,11 +124,11 @@ export default function Post({ data }: { data: Article }) {
           <div className="w-full flex justify-center">
             <Image
               loader={myImageLoader}
-              className="w-[40%] rounded-2xl mb-12"
+              className="w-[75%] sm:w-[40%] rounded-2xl mb-12"
               src={imageUrl}
               width={200}
               height={200}
-              alt=""
+              alt="Zdjęcie główne do artykułu"
             />
           </div>
           <div className="px-8 lg:px-24">
@@ -139,7 +139,7 @@ export default function Post({ data }: { data: Article }) {
                   <Image
                     loader={myImageLoader}
                     src={authorImgUrl}
-                    alt="article cover image"
+                    alt="Zdjęcie autora artykułu"
                     width={400}
                     height={400}
                     className="w-14 h-14 object-cover border rounded-full"
