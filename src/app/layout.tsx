@@ -9,6 +9,7 @@ import { Montserrat } from "next/font/google";
 import CanonicalURL from "./components/CanonicalURL";
 import ScrollToTop from "./components/ScrollToTop";
 import CookieBanner from "./components/CookieBanner";
+import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
 
 const FAQ = dynamic(() => import("./components/FAQ"), {
   loading: () => <p>Loading...</p>,
@@ -137,6 +138,8 @@ export default async function RootLayout({
   const globalComponents = await getGlobalAnother();
   const global = await getGlobal();
   const globalMeta = await getGlobalMeta();
+  const gtmKey = process.env.NEXT_GTM_KEY;
+  const googleAnalyticsKey = process.env.NEXT_GOOGLE_ANALYTICS_KEY;
 
   // TODO: CREATE A CUSTOM ERROR PAGE
   if (!global.data || !globalComponents.data || !globalMeta.data) return null;
@@ -218,6 +221,8 @@ export default async function RootLayout({
           src="https://unpkg.com/tailwindcss-intersect@2.x.x/dist/observer.min.js"
         ></script>
       </body>
+      {gtmKey && <GoogleTagManager gtmId={gtmKey} />}
+      {googleAnalyticsKey && <GoogleAnalytics gaId={googleAnalyticsKey} />}
     </html>
   );
 }
