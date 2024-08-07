@@ -51,96 +51,21 @@ export default function TextWithPictures({ data }: TextWithPictureProps) {
               }}
               className="w-[270px] h-[320px]"
             >
-              <SwiperSlide className="flex  items-center justify-center rounded-2xl">
-                <Image
-                  loader={myImageLoader}
-                  src={data.pictures.data[0].attributes.url}
-                  alt={data.pictures.data[0].attributes.alternativeText}
-                  width={290}
-                  height={320}
-                  className="h-full object-cover rounded-2xl"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="flex  items-center justify-center rounded-2xl">
-                <Image
-                  loader={myImageLoader}
-                  src={data.pictures.data[1].attributes.url}
-                  alt={data.pictures.data[1].attributes.alternativeText}
-                  width={290}
-                  height={320}
-                  className="h-full object-cover rounded-2xl"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="flex  items-center justify-center rounded-2xl">
-                <Image
-                  loader={myImageLoader}
-                  src={data.pictures.data[2].attributes.url}
-                  alt={data.pictures.data[2].attributes.alternativeText}
-                  width={290}
-                  height={320}
-                  className="h-full object-cover rounded-2xl"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="flex  items-center justify-center rounded-2xl">
-                <Image
-                  loader={myImageLoader}
-                  src={data.pictures.data[0].attributes.url}
-                  alt={data.pictures.data[0].attributes.alternativeText}
-                  width={290}
-                  height={320}
-                  className="h-full object-cover rounded-2xl"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="flex  items-center justify-center rounded-2xl">
-                <Image
-                  loader={myImageLoader}
-                  src={data.pictures.data[1].attributes.url}
-                  alt={data.pictures.data[1].attributes.alternativeText}
-                  width={290}
-                  height={320}
-                  className="h-full object-cover rounded-2xl"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="flex  items-center justify-center rounded-2xl">
-                <Image
-                  loader={myImageLoader}
-                  src={data.pictures.data[2].attributes.url}
-                  alt={data.pictures.data[2].attributes.alternativeText}
-                  width={290}
-                  height={320}
-                  className="h-full object-cover rounded-2xl"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="flex  items-center justify-center rounded-2xl">
-                <Image
-                  loader={myImageLoader}
-                  src={data.pictures.data[0].attributes.url}
-                  alt={data.pictures.data[0].attributes.alternativeText}
-                  width={290}
-                  height={320}
-                  className="h-full object-cover rounded-2xl"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="flex  items-center justify-center rounded-2xl">
-                <Image
-                  loader={myImageLoader}
-                  src={data.pictures.data[1].attributes.url}
-                  alt={data.pictures.data[1].attributes.alternativeText}
-                  width={290}
-                  height={320}
-                  className="h-full object-cover rounded-2xl"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="flex  items-center justify-center rounded-2xl">
-                <Image
-                  loader={myImageLoader}
-                  src={data.pictures.data[2].attributes.url}
-                  alt={data.pictures.data[2].attributes.alternativeText}
-                  width={290}
-                  height={320}
-                  className="h-full object-cover rounded-2xl"
-                />
-              </SwiperSlide>
+              {data.pictures.data.map((item, index) => (
+                <SwiperSlide
+                  key={index}
+                  className="flex  items-center justify-center rounded-2xl"
+                >
+                  <Image
+                    loader={myImageLoader}
+                    src={item.attributes.url}
+                    alt={item.attributes.alternativeText}
+                    width={290}
+                    height={320}
+                    className="h-full object-cover rounded-2xl"
+                  />
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
         </div>

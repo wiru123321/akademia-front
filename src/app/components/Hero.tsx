@@ -28,35 +28,44 @@ interface HeroProps {
     title: string;
     description: string;
     picture: Picture;
+    mobilePicture: Picture;
+    tabletPicture: Picture;
     buttons: Button[];
   };
 }
 
 export default function Hero({ data }: HeroProps) {
   const imgUrl = getStrapiMedia(data.picture.data.attributes.url);
+  const mobileImgUrl = getStrapiMedia(data.mobilePicture.data.attributes.url);
+  const tabletImgUrl = getStrapiMedia(data.tabletPicture.data.attributes.url);
 
   return (
     <section className="mb-10 overflow-hidden mx-auto opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once">
       <div
         style={{
-          backgroundImage: `url(${imgUrl || ""})`,
+          // @ts-ignore:next-line
+          "---image-url": `url(${imgUrl || ""})`,
+          "---mobile-image-url": `url(${mobileImgUrl || ""})`,
+          "---tablet-image-url": `url(${tabletImgUrl || ""})`,
         }}
-        className="relative overflow-hidden bg-cover bg-no-repeat bg-center min-h-[500px] lg:min-h-[600px] xl:min-h-[800px] h-[100vh]"
+        className="relative overflow-hidden bg-cover bg-no-repeat bg-center min-h-[500px] lg:min-h-[600px] xl:min-h-[800px] h-[100vh] bg-[image:var(---mobile-image-url)] sm:bg-[image:var(---tablet-image-url)] xl:bg-[image:var(---image-url)]"
       >
         <div className="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed">
           <div className="container flex flex-col justify-center px-6 mx-auto items-center lg:items-start lg:flex-row lg:justify-between">
             <div className="flex flex-col justify-center items-center px-8 md:px-6 text-center lg:items-start min-h-[500px] lg:min-h-[600px] xl:min-h-[800px] h-[100vh] rounded-lg md:max-w-xl lg:max-w-2xl xl:max-w-4xl lg:text-left">
-              {data.title && (
-                <h1 className="text-2xl sm:text-3xl font-serif font-bold text-[#B97B80] leading-none lg:text-5xl xl:text-7xl mb-8">
-                  {data.title}
-                </h1>
-              )}
+              <div className="backdrop-blur-sm lg:backdrop-blur-none">
+                {data.title && (
+                  <h1 className="text-2xl sm:text-3xl font-serif font-bold text-[#B97B80] leading-none lg:text-5xl xl:text-7xl mb-8">
+                    {data.title}
+                  </h1>
+                )}
 
-              <p className="tmt-6 font-serif font-semibold mb-8 text-md sm:text-lg md:text-2xl sm:mb-12 text-white">
-                {data.description ? data.description : " "}
-              </p>
+                <p className="tmt-6 font-serif font-semibold text-md sm:text-lg md:text-2xl sm:mb-12 text-black">
+                  {data.description ? data.description : " "}
+                </p>
+              </div>
 
-              <div className="flex flex-col space-y-4 items-center lg:items-start sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
+              <div className="flex flex-col space-y-4 items-center mt-8 lg:items-start sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
                 <Link
                   href={data.buttons[0].url}
                   target={data.buttons[0].newTab ? "_blank" : "_self"}

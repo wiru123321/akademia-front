@@ -59,8 +59,8 @@ export default function Footer({
 }: TrainingProps) {
   return (
     <div className="bg-[#1E1E1E] opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once">
-      <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-        <div className="grid gap-10 row-gap-6 mb-12 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full xl:max-w-screen-xl md:px-24 xl:px-8">
+        <div className="grid gap-10 row-gap-6 mb-12 sm:grid-cols-2 xl:grid-cols-4">
           <div className="text-center w-full md:text-left md:w-auto">
             <span className="font-serif ml-2 text-base font-bold tracking-wide text-white text-sm">
               {title && title}
@@ -71,7 +71,7 @@ export default function Footer({
               </p>
             </div>
           </div>
-          <div className="justify-self-start text-center w-full md:text-left md:w-auto lg:justify-self-end text-sm">
+          <div className="justify-self-start text-center w-full md:text-left md:w-auto xl:justify-self-end text-sm">
             <p className="font-serif text-base font-bold tracking-wide text-white">
               {lessonTitle && lessonTitle}
             </p>
@@ -94,7 +94,7 @@ export default function Footer({
                 ))}
             </div>
           </div>
-          <div className="justify-self-start text-center w-full md:text-left md:w-auto lg:justify-self-center text-sm">
+          <div className="justify-self-start text-center w-full md:text-left md:w-auto xl:justify-self-center text-sm">
             <p className="font-serif text-base font-bold tracking-wide text-white">
               {trainingTitle && trainingTitle}
             </p>
@@ -117,7 +117,7 @@ export default function Footer({
                 ))}
             </div>
           </div>
-          <div className="justify-self-start text-center w-full md:text-left md:w-auto lg:justify-self-center">
+          <div className="justify-self-start text-center w-full md:text-left md:w-auto xl:justify-self-center">
             <span className="font-serif text-base font-bold tracking-wide text-white">
               {contactSection.title && contactSection.title}
             </span>
@@ -171,8 +171,8 @@ export default function Footer({
             </div>
           </div>
         </div>
-        <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t border-[#393939] lg:flex-row">
-          <p className="font-montserrat text-center text-sm text-[#FFFFFF] md:text-left">
+        <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t border-[#393939] xl:flex-row">
+          <p className="font-montserrat text-center text-sm text-[#FFFFFF] xl:text-left">
             {copyrights && copyrights}
           </p>
           <ul className="flex gap-1 text-center self-center md:gap-8 flex-col mb-3 space-y-2 md:text-left lg:mb-0 sm:space-y-0 sm:flex-row">

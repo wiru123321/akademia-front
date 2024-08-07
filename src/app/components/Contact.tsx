@@ -236,7 +236,7 @@ export default function Contact({
                             </h3>
                           )}
                           {card.description && (
-                            <p className="text-sm md:text-lg font-medium break-words">
+                            <p className="text-sm md:text-lg font-medium break-words whitespace-pre">
                               {card.description}
                             </p>
                           )}
@@ -322,12 +322,17 @@ export default function Contact({
                           </span>
                         </label>
                         <label
-                          className="mt-px font-light text-gray-700 cursor-pointer select-none"
+                          className="mt-px font-light font-montserrat text-gray-700 cursor-pointer select-none"
                           htmlFor="check"
                         >
-                          Wyrażam zgodę na przetwarzanie podanych danych
-                          osobowych oraz na kontakt ze strony
-                          akademiarozwojudziecka.pl
+                          Wysyłając swoje dane wyrażasz zgodę na ich
+                          wykorzystanie zgodnie z{" "}
+                          <a
+                            href="/polityka-prywatnosci"
+                            className="font-montserrat font-medium text-[#B8777D] underline hover:no-underline"
+                          >
+                            polityką prywatności.
+                          </a>
                         </label>
                       </div>
                     </div>
