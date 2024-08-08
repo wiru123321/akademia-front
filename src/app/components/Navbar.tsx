@@ -305,8 +305,7 @@ export default function Navbar({
                                   <ul className="mt-3 text-[15px]">
                                     {link.megaSection.map((section, index) => {
                                       return (
-                                        section.group ===
-                                          Group.INDYWIDUALNE && (
+                                        section.group === Group.GRUPOWE && (
                                           <li key={index}>
                                             <Link
                                               href={section.url}
