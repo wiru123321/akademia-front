@@ -13,11 +13,7 @@ const nextConfig = {
       },
     ],
   },
-  // compiler: {
-  //   styledComponents: {
-  //     minify: false,
-  //   },
-  // },
+  experimental: { serverActions: true },
 };
 
 module.exports = nextConfig;
