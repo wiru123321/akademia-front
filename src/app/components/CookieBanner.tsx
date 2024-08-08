@@ -1,11 +1,13 @@
-"use client";
 import Link from "next/link";
-import { useState } from "react";
+import { cookies } from "next/headers";
+import Buttons from "./Buttons";
 
 export default function CookieBanner() {
-  const [open, setOpen] = useState(true);
+  const cookieStore = cookies();
+  const cookie = cookieStore.get("gdpr");
+
   return (
-    open && (
+    cookie === undefined && (
       <div className="fixed z-40 bottom-0 w-full p-6 opacity-0 intersect:animate-fade animate-duration-[1500ms] intersect-once">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto px-8 py-6 w-full bg-[#000000dc] rounded-md">
@@ -23,24 +25,7 @@ export default function CookieBanner() {
               </div>
               <div className="w-full md:w-1/2 xl:w-auto px-4">
                 <div className="sm:flex items-center justify-end">
-                  <Link
-                    className="inline-block w-full sm:w-auto py-4 px-6 mb-4 sm:mb-0 sm:mr-4 text-center font-heading font-medium text-base text-white bg-[#b8777e] hover:bg-[#DEC9CA] hover:text-black border border-white opacity-100 rounded-sm transition duration-200"
-                    href="/"
-                    onClick={() => {
-                      setOpen(false);
-                    }}
-                  >
-                    Zaakceptuj
-                  </Link>
-                  <Link
-                    className="inline-block w-full sm:w-auto py-4 px-6 text-center font-heading font-medium text-base text-white bg-black hover:text-[#B8777D] border border-white hover:border-[#B8777D] rounded-sm transition duration-150"
-                    href="/"
-                    onClick={() => {
-                      setOpen(false);
-                    }}
-                  >
-                    Odrzuć
-                  </Link>
+                  <Buttons />
                 </div>
               </div>
             </div>
