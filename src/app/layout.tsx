@@ -161,6 +161,24 @@ export default async function RootLayout({
     <html lang="pl">
       <head>
         <CanonicalURL />
+        <link
+          rel="icon"
+          href="https://admin.akademiarozwojudziecka.pl/uploads/logo_40x40_Akademia_Rozwoju_Dziecka_4bb5b2f6e5.png"
+          sizes="40x40"
+        />
+        <link
+          rel="icon"
+          href="https://admin.akademiarozwojudziecka.pl/uploads/logo_192x193_Akademia_Rozwoju_Dziecka_png_f962451a93.png"
+          sizes="192x192"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="https://admin.akademiarozwojudziecka.pl/uploads/logo_180_180_Akademia_Rozwoju_Dziecka_png_39a3ddfd26.png"
+        />
+        <meta
+          name="msapplication-TileImage"
+          content="https://admin.akademiarozwojudziecka.pl/uploads/logo_270x270_Akademia_Rozwoju_Dziecka_png_11bd47e3a7.png"
+        />
         <meta name="twitter:card" content={twitter.card} />
         <meta name="twitter:title" content={twitter.title} />
         <meta name="twitter:description" content={twitter.description} />
